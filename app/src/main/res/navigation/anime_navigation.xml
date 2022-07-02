@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="com.berkaytuncel.animelist.FeedFragment"
+        android:name="com.berkaytuncel.animelist.view.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
         <action
@@ -16,11 +16,15 @@
     </fragment>
     <fragment
         android:id="@+id/animeFragment"
-        android:name="com.berkaytuncel.animelist.AnimeFragment"
+        android:name="com.berkaytuncel.animelist.view.AnimeFragment"
         android:label="fragment_anime"
         tools:layout="@layout/fragment_anime" >
         <action
             android:id="@+id/action_animeFragment_to_feedFragment"
             app:destination="@id/feedFragment" />
+        <argument
+            android:name="animeUuid"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 </navigation>

@@ -1,7 +1,8 @@
-package com.berkaytuncel.animelist
+package com.berkaytuncel.animelist.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.berkaytuncel.animelist.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
