@@ -1,10 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-<FrameLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.AnimeFragment">
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/animeImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/ic_launcher"
+        android:paddingTop="10dp"
+        android:minHeight="200dp"
+        android:scaleType="fitCenter">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/animeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animeImage"
+        android:layout_centerHorizontal="true"
+        android:text="Anime Name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_margin="5dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/animeEpisodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animeName"
+        android:layout_centerHorizontal="true"
+        android:text="Episodes:"
+        android:textSize="16sp"
+        android:layout_margin="7dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/animeDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animeEpisodes"
+        android:layout_centerHorizontal="true"
+        android:text="Description:"
+        android:textSize="16sp"
+        android:layout_margin="7dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/animeDescription2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animeDescription"
+        android:layout_centerHorizontal="true"
+        android:text="Description:"
+        android:textSize="16sp"
+        android:layout_margin="7dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/animeDescription3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animeDescription2"
+        android:layout_centerHorizontal="true"
+        android:text="Description:"
+        android:textSize="16sp"
+        android:layout_margin="7dp">
+
+    </TextView>
+
+</RelativeLayout>
 </layout>

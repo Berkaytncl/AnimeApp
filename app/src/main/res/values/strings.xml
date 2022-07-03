@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AnimeList</string>
+    <string name="anime_list_error">Error! Try Again</string>
 </resources>

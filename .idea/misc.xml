@@ -3,11 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/MyProjects/AndroidStudioProjects/AnimeList/app/src/main/res/layout/activity_main.xml" value="0.20199275362318841" />
-        <entry key="..\:/MyProjects/AndroidStudioProjects/AnimeList/app/src/main/res/layout/fragment_anime.xml" value="0.14336372847011145" />
-        <entry key="..\:/MyProjects/AndroidStudioProjects/AnimeList/app/src/main/res/layout/fragment_feed.xml" value="0.20199275362318841" />
-        <entry key="..\:/MyProjects/AnimeList/app/src/main/res/layout/fragment_anime.xml" value="0.29583333333333334" />
-        <entry key="..\:/MyProjects/AnimeList/app/src/main/res/layout/fragment_feed.xml" value="0.29583333333333334" />
+        <entry key="..\:/MyProjects/AnimeList/app/src/main/res/layout/fragment_anime.xml" value="0.25886524822695034" />
       </map>
     </option>
   </component>
