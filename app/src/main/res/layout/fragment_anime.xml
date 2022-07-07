@@ -44,36 +44,48 @@
     </TextView>
 
     <TextView
-        android:id="@+id/animeDescription"
+        android:id="@+id/animeStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/animeEpisodes"
         android:layout_centerHorizontal="true"
-        android:text="Description:"
+        android:text="Status:"
         android:textSize="16sp"
         android:layout_margin="7dp">
 
     </TextView>
 
     <TextView
-        android:id="@+id/animeDescription2"
+        android:id="@+id/animeDuration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/animeDescription"
+        android:layout_below="@id/animeStatus"
         android:layout_centerHorizontal="true"
-        android:text="Description:"
+        android:text="Duration:"
         android:textSize="16sp"
         android:layout_margin="7dp">
 
     </TextView>
 
     <TextView
-        android:id="@+id/animeDescription3"
+        android:id="@+id/animeScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/animeDescription2"
+        android:layout_below="@id/animeDuration"
         android:layout_centerHorizontal="true"
-        android:text="Description:"
+        android:text="Score:"
+        android:textSize="16sp"
+        android:layout_margin="7dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/animeThemes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animeScore"
+        android:layout_centerHorizontal="true"
+        android:text="Themes:"
         android:textSize="16sp"
         android:layout_margin="7dp">
 
