@@ -49,7 +49,7 @@ class FeedFragment : Fragment() {
         observeLiveData()
     }
 
-    fun observeLiveData() {
+    private fun observeLiveData() {
         viewModel.anime.observe(viewLifecycleOwner, Observer {
             it?.let {
                 animeList.visibility = View.VISIBLE
