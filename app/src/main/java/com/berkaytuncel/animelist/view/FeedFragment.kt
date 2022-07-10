@@ -53,7 +53,7 @@ class FeedFragment : Fragment() {
         viewModel.anime.observe(viewLifecycleOwner, Observer {
             it?.let {
                 animeList.visibility = View.VISIBLE
-                animeAdapter.updateAnimeList(it)
+                animeAdapter.updateAnimeList(it.data)
             }
         })
 

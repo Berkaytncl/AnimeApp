@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.berkaytuncel.animelist.R
-import com.berkaytuncel.animelist.model.Anime
+import com.berkaytuncel.animelist.model.response.AnimeDataResponse
 import com.berkaytuncel.animelist.view.FeedFragmentDirections
 import kotlinx.android.synthetic.main.item_anime.view.*
 
-class AnimeAdapter(val animeList: ArrayList<Anime>): RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>() {
+class AnimeAdapter(var animeList: ArrayList<AnimeDataResponse.Datum>): RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>() {
 
-    class AnimeViewHolder(var view: View): RecyclerView.ViewHolder(view) {
+    class AnimeViewHolder(val view: View): RecyclerView.ViewHolder(view) {
 
     }
 
@@ -23,8 +23,8 @@ class AnimeAdapter(val animeList: ArrayList<Anime>): RecyclerView.Adapter<AnimeA
     }
 
     override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
-        holder.view.name.text = animeList[position].animeName
-        holder.view.episodes.text = animeList[position].animeEpisodes
+        holder.view.name.text = animeList[position].title
+        holder.view.episodes.text = animeList[position].episodes.toString()
 
         holder.view.setOnClickListener {
             val action = FeedFragmentDirections.actionFeedFragmentToAnimeFragment()
@@ -36,7 +36,7 @@ class AnimeAdapter(val animeList: ArrayList<Anime>): RecyclerView.Adapter<AnimeA
         return animeList.size
     }
 
-    fun updateAnimeList(newAnimeList: List<Anime>){
+    fun updateAnimeList(newAnimeList: List<AnimeDataResponse.Datum>){
         animeList.clear()
         animeList.addAll(newAnimeList)
         notifyDataSetChanged()

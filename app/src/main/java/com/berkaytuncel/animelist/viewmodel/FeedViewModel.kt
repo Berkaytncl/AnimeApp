@@ -2,24 +2,47 @@ package com.berkaytuncel.animelist.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.berkaytuncel.animelist.model.Anime
+import com.berkaytuncel.animelist.model.response.AnimeDataResponse
+
+import com.berkaytuncel.animelist.service.AnimeAPIServis
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.observers.DisposableSingleObserver
+import io.reactivex.schedulers.Schedulers
 
 class FeedViewModel: ViewModel() {
 
-    val anime = MutableLiveData<List<Anime>>()
+    private val animeAPIServis = AnimeAPIServis()
+    private val disposable = CompositeDisposable()
+
+    val anime = MutableLiveData<AnimeDataResponse>()
     val animeError = MutableLiveData<Boolean>()
     val animeLoading = MutableLiveData<Boolean>()
 
     fun refreshData() {
+        getDataFromAPI()
+    }
 
-        val anime = Anime("Naruto", "720 episode", "Airred", "25 min per episodes", "10.0", "a, b", "www.ss.com")
-        val anime2 = Anime("Bleach", "366 episodes", "Airing", "24 min per episodes", "10.0", "c, d", "www.dd.com")
-        val anime3 = Anime("Black Clover", "170 episodes", "Airing", "23 min per episodes", "10.0", "f, g", "www.ff.com")
+    private fun getDataFromAPI() {
+        animeLoading.value = true
 
-        val animeList = arrayListOf<Anime>(anime, anime2, anime3)
+        disposable.add(
+            animeAPIServis.getData()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object: DisposableSingleObserver<AnimeDataResponse>(){
+                    override fun onSuccess(t: AnimeDataResponse) {
+                        anime.value = t
+                        animeError.value = false
+                        animeLoading.value = false
+                    }
 
-        this.anime.value = animeList
-        animeError.value = false
-        animeLoading.value = false
+                    override fun onError(e: Throwable) {
+                        animeError.value = true
+                        animeLoading.value = false
+                        e.printStackTrace()
+                    }
+                })
+        )
     }
 }

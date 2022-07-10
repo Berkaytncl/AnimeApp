@@ -46,12 +46,12 @@ class AnimeFragment : Fragment() {
     private fun observeLiveData() {
         viewModel.animeLiveData.observe(viewLifecycleOwner, Observer {
             it?.let {
-                animeName.text = it.animeName
-                animeEpisodes.text = it.animeEpisodes
-                animeStatus.text = it.animeStatus
-                animeDuration.text = it.animeDuration
-                animeScore.text = it.animeScore
-                animeThemes.text = it.animeThemes
+                animeName.text = it.data[animeUuid].title //animeName
+                animeEpisodes.text = it.data[animeUuid].episodes.toString() //animeEpisodes
+                animeStatus.text = it.data[animeUuid].status.toString() //animeStatus
+                animeDuration.text = it.data[animeUuid].duration //animeDuration
+                animeScore.text = it.data[animeUuid].score.toString() //animeScore
+                //animeThemes.text = it.animeThemes
             }
         })
     }
